@@ -11,5 +11,4 @@ Feature: TAOrder
     And Click on Variant3
     Then User Click on AddVariant Button
     Then user click  on View Cart Button 
-    Then user click  on Place Order Button 
-    123
+    Then user click  on Place Order Button
