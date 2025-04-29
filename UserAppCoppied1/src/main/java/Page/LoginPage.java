@@ -36,7 +36,6 @@ public class LoginPage extends WebBase {
 	private By AddMore = By.xpath("//*[@id=\"root\"]/div/div/div[3]/div[6]/div[2]/div[1]/div");
 	private By LoginButton = By.xpath("//*[@id=\"root\"]/div/div[3]/div[1]/div/div/div/div/div/div[2]/div");
 
-
 	public void AddClick() throws InterruptedException {
 
 		clickOnElement(AddButton, "Add Button", 10);
@@ -76,7 +75,7 @@ public class LoginPage extends WebBase {
 	public void Click_ViewCart() throws InterruptedException {
 
 		clickOnElement(ViewCart, "ViewCart", 10);
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 	}
 	
 	
@@ -84,6 +83,7 @@ public class LoginPage extends WebBase {
 
 		clickOnElement(PlaceOrder, "PlaceOrder", 10);
 		Thread.sleep(10000);
+
 	}
 
 

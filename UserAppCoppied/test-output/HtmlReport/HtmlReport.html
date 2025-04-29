@@ -44,6 +44,7 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -53,7 +54,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Mar 14, 2024 02:12:01 pm</span>
+			<span class='label blue darken-3 suite-start-time'>Apr 22, 2025 04:10:55 pm</span>
 			</a>
 		</ul>
 	</div>
@@ -68,7 +69,7 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
@@ -81,7 +82,7 @@
 				<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@smoke</a></li>
+					<li><a href='#'>@table</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -122,10 +123,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>2</span> feature(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='50%'>2</span> skipped
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
                 </div>
             </div>
         </div>
@@ -136,12 +137,12 @@
                     <canvas id='child-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='80%'><span class='strong'>8</span> scenario(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, 
-                    <span class='strong tooltipped' data-position='top' data-tooltip='20%'>2</span> skipped, 
-                    <span class='strong tooltipped' data-position='top' data-tooltip='20%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
                 </div>
             </div>
         </div>
@@ -152,12 +153,12 @@
                     <canvas id='grandchild-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='96.825%'><span class='strong'>61</span> step(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, 
-                    <span class='strong tooltipped' data-position='top' data-tooltip='3.175%'>2</span> skipped, 
-                    <span class='strong tooltipped' data-position='top' data-tooltip='3.175%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='33.333%'>1</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>0</span> others
                 </div>
             </div>
         </div>
@@ -175,11 +176,11 @@
 </div>	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>CompleteOrder</span>
-						<span class='test-time'>Mar 14, 2024 02:12:01 pm</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>TableReservation</span>
+						<span class='test-time'>Apr 22, 2025 04:10:56 pm</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class="sr-filters bdd-filters">
@@ -188,392 +189,31 @@
 	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
-<div class='scenario node' test-id='2' status='pass'>
+<div class='scenario node' test-id='2' status='fail'>
 	<div class='category-list'>
-		<span class='category label'>@smoke</span>
+		<span class='category label'>@table</span>
 	</div>
-	<span class='duration right label'>0h 0m 2s+779ms</span>
+	<span class='duration right label'>0h 0m 3s+271ms</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Open Chrome Browser</div>
+		<div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> Scenario: Open Chrome Browser</div>
 	</div>
 	<ul class='steps'>
-		<li test-id='3' class='node given pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.i_open_browser_and_POS(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I open "Chrome" browser and POS "https://partner.easyeat.ai/login"</div>
-			<div class="node-step"></div>
+		<li test-id='3' class='node given fail' status='fail'>
+			<div class="step-name" title="stepDefination.stepDefination.i_open_browser_and(java.lang.String,java.lang.String)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>Given I open "Chrome" browser and "pickup"</div>
+			<textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "WebBase.WebBase.driver" is null
+	at WebBase.WebBase.openUserApp(WebBase.java:204)
+	at WebBase.WebBase.openWebsite(WebBase.java:192)
+	at stepDefination.stepDefination.i_open_browser_and(stepDefination.java:62)
+	at ✽.I open "Chrome" browser and "pickup"(file:///C:/Users/New/Downloads/UserAppCoppied/Features/TableReservation.feature:34)
+</textarea>
 		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='4' status='pass'>
-	<span class='duration right label'>0h 0m 4s+885ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Login with valid Credentials</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='5' class='node when pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_is_on_Login_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When User is on Login Page</div>
-			<div class="node-step"></div>
+		<li test-id='4' class='node given skip' status='skip'>
+			<div class="step-name" title="stepDefination.stepDefination.i_open_browser_and_POS(java.lang.String,java.lang.String)"><span class='status skip' title='skip'><i class='material-icons'>redo</i></span>Given I open "Chrome" browser and POS "posurl"</div>
+			<div class="node-step">Step skipped</div>
 		</li>
-		<li test-id='6' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_enters_and(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User enters "ajai@easyeat.ai" and "ajai1234"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='7' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_loginButton()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Login button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='8' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_should_get_logged_in()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User should get logged in</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='9' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.message_displayed_login_successfully()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Message displayed Login Successfully</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='10' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_click(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  "1"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='11' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_click(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  "2"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='12' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_click(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  "4"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='13' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_click(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  "1"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='14' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_SignIn_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then click on SignIn button</div>
-			<div class="node-step"></div>
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='15'>
-					<div class='test-heading'>
-						<span class='test-name'>LoginPage</span>
-						<span class='test-time'>Mar 14, 2024 02:12:09 pm</span>
-						<span class='test-status right skip'>skip</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-<div class='scenario node' test-id='16' status='pass'>
-	<div class='category-list'>
-		<span class='category label'>@smoke</span>
-	</div>
-	<span class='duration right label'>0h 0m 2s+640ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Open Chrome Browser</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='17' class='node given pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.i_open_browser_and(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I open "Chrome" browser and "https://easyeat.ai/r/automation_cafe_Malaysia12/1?source=qr&tableId=a1&tableNo=333"</div>
-			<div class="node-step"></div>
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='18' status='skip'>
-	<span class='duration right label'>0h 0m 5s+984ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status skip' title='skip'><i class='material-icons'>redo</i></span> Scenario: Create Dine In Order</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='19' class='node when pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_is_on_Menu_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When User is on Menu Page</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='20' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Add_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User Click on Add button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='21' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant1()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant1</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='22' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant2()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant2</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='23' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant3()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant3</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='24' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_AddVariant_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User Click on AddVariant Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='25' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_View_Cart_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  on View Cart Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='26' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Place_Order_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  on Place Order Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='27' class='node then skip' status='skip'>
-			<div class="step-name" title=""><span class='status skip' title='skip'><i class='material-icons'>redo</i></span>Then Read invoice number</div>
-			<div class="node-step">Step undefined</div>
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='28'>
-					<div class='test-heading'>
-						<span class='test-name'>PickupOrder</span>
-						<span class='test-time'>Mar 14, 2024 02:12:18 pm</span>
-						<span class='test-status right skip'>skip</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-<div class='scenario node' test-id='29' status='pass'>
-	<div class='category-list'>
-		<span class='category label'>@smoke</span>
-	</div>
-	<span class='duration right label'>0h 0m 3s+325ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Open Chrome Browser</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='30' class='node given pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.i_open_browser_and(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I open "Chrome" browser and "https://easyeat.ai/r/automation_cafe_Malaysia12/3"</div>
-			<div class="node-step"></div>
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='31' status='pass'>
-	<span class='duration right label'>0h 0m 35s+731ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Create Pickup Order</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='32' class='node when pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_is_on_Menu_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When User is on Menu Page</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='33' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Add_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User Click on Add button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='34' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant1()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant1</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='35' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant2()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant2</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='36' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant3()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant3</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='37' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_AddVariant_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User Click on AddVariant Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='38' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_View_Cart_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  on View Cart Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='39' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Continue_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  on Continue Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='40' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Login_via_Mobile_Number_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  on Login via Mobile Number Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='41' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Flag()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Flag</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='42' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_write(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user write "Malaysia"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='43' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Malaysia_Country_code()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Malaysia Country code</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='44' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_set_mobile_number(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user set mobile number "111123456"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='45' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Continue1_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Continue1 Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='46' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Place_Order_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  on Place Order Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='47' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.select_StoreCredits_Checkbox()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select StoreCredits Checkbox</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='48' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Confirm_to_pay_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then click on Confirm to pay Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='49' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Okay_got_it_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then click on Okay got it button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='50' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.get_invoice_number()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then get invoice number</div>
-			<div class="node-step"></div>
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='51' status='pass'>
-	<span class='duration right label'>0h 0m 2s+566ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Open Chrome Browser</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='52' class='node given pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.i_open_browser_and_POS(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I open "Chrome" browser and POS "https://partner.easyeat.ai/login"</div>
-			<div class="node-step"></div>
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='53' status='skip'>
-	<span class='duration right label'>0h 0m 4s+967ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status skip' title='skip'><i class='material-icons'>redo</i></span> Scenario: Login with valid Credentials</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='54' class='node when pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_is_on_Login_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When User is on Login Page</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='55' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_enters_and(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User enters "ajai@easyeat.ai" and "ajai1234"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='56' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_loginButton()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Login button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='57' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_should_get_logged_in()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User should get logged in</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='58' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.message_displayed_login_successfully()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Message displayed Login Successfully</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='59' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_click(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  "1"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='60' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_click(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  "2"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='61' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_click(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  "4"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='62' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_click(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  "1"</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='63' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_SignIn_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then click on SignIn button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='64' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.close_marketing_pop_up()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then close marketing pop up</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='65' class='node and skip' status='skip'>
-			<div class="step-name" title=""><span class='status skip' title='skip'><i class='material-icons'>redo</i></span>And search invoice number</div>
-			<div class="node-step">Step undefined</div>
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='66'>
-					<div class='test-heading'>
-						<span class='test-name'>TAOrder</span>
-						<span class='test-time'>Mar 14, 2024 02:13:04 pm</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-<div class='scenario node' test-id='67' status='pass'>
-	<div class='category-list'>
-		<span class='category label'>@smoke</span>
-	</div>
-	<span class='duration right label'>0h 0m 3s+422ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Open Chrome Browser</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='68' class='node given pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.i_open_browser_and(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I open "Chrome" browser and "https://easyeat.ai/r/automation_cafe_Malaysia12/3/ta"</div>
-			<div class="node-step"></div>
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='69' status='pass'>
-	<span class='duration right label'>0h 0m 2s+909ms</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Create TA Order</div>
-	</div>
-	<ul class='steps'>
-		<li test-id='70' class='node when pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.user_is_on_Menu_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When User is on Menu Page</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='71' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Add_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User Click on Add button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='72' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant1()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant1</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='73' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant2()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant2</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='74' class='node and pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Variant3()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on Variant3</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='75' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_AddVariant_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User Click on AddVariant Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='76' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_View_Cart_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  on View Cart Button</div>
-			<div class="node-step"></div>
-		</li>
-		<li test-id='77' class='node then pass' status='pass'>
-			<div class="step-name" title="stepDefination.stepDefination.click_on_Place_Order_Button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click  on Place Order Button</div>
-			<div class="node-step"></div>
+		<li test-id='5' class='node then skip' status='skip'>
+			<div class="step-name" title="stepDefination.stepDefination.switch_back_to_User_app()"><span class='status skip' title='skip'><i class='material-icons'>redo</i></span>Then switch back to User app</div>
+			<div class="node-step">Step skipped</div>
 		</li>
 	</ul>
 </div>
@@ -619,15 +259,15 @@
 			<ul id='category-collection' class='category-collection'>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@smoke</span>
+						<span class='category-name'>@table</span>
 						<span class='category-status right'>
-						<span class='label pass'>4</span>
+						<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 4</span>
 							
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 						<div class='category-tests'>
@@ -641,24 +281,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Mar 14, 2024 02:12:01 pm</td>
+										<td>Apr 22, 2025 04:10:56 pm</td>
 										<td class='linked' test-id='2'>Open Chrome Browser</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Mar 14, 2024 02:12:09 pm</td>
-										<td class='linked' test-id='16'>Open Chrome Browser</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Mar 14, 2024 02:12:18 pm</td>
-										<td class='linked' test-id='29'>Open Chrome Browser</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Mar 14, 2024 02:13:04 pm</td>
-										<td class='linked' test-id='67'>Open Chrome Browser</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -674,7 +299,67 @@
 		</div>
 	</div>
 </div>
-<!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+<!-- category view --><div id='exception-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='exception-collection' class='exception-collection'>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>java.lang.NullPointerException</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Apr 22, 2025 04:10:56 pm</td>
+										<td class='linked' test-id='3'>Given I open "Chrome" browser and "pickup"</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "WebBase.WebBase.driver" is null
+	at WebBase.WebBase.openUserApp(WebBase.java:204)
+	at WebBase.WebBase.openWebsite(WebBase.java:192)
+	at stepDefination.stepDefination.i_open_browser_and(stepDefination.java:62)
+	at ✽.I open "Chrome" browser and "pickup"(file:///C:/Users/New/Downloads/UserAppCoppied/Features/TableReservation.feature:34)
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='exception-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- exception view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -682,37 +367,37 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Features
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>10</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>63</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Mar 14, 2024 02:12:01 pm</div>
+					<div class='panel-lead'>Apr 22, 2025 04:10:55 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Mar 14, 2024 02:13:11 pm</div>
+			 		<div class='panel-lead'>Apr 22, 2025 04:10:59 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 1m 9s+449ms</div>
+					<div class='panel-lead'>0h 0m 4s+167ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -728,12 +413,12 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@smoke</td>
-							<td>4</td>
+							<td>@table</td>
 							<td>0</td>
+							<td>1</td>
 							<td>0</td>
 							<td>
-									100%
+									0%
 							</td>
 						</tr>
 					</table>
@@ -747,39 +432,39 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 4,
-				passParent: 2,
-				failParent: 0,
+                parentCount: 1,
+				passParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 2,
-				exceptionsParent: 2,
-				childCount: 10,
-				passChild: 8,
-				failChild: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				childCount: 1,
+				passChild: 0,
+				failChild: 1,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 2,
+				skipChild: 0,
 				infoChild: 0,
 				debugChild: 0,
-				exceptionsChild: 2,
-				grandChildCount: 63,
-				passGrandChild: 61,
-				failGrandChild: 0,
+				exceptionsChild: 1,
+				grandChildCount: 3,
+				passGrandChild: 0,
+				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
 				skipGrandChild: 2,
 				infoGrandChild: 0,
 				debugGrandChild: 0,
-				exceptionsGrandChild: 2,
+				exceptionsGrandChild: 3,
 			};
 		</script>
 		<script>
 			var timeline = {
-			        "CompleteOrder":7.673,"LoginPage":8.66,"PickupOrder":46.607,"TAOrder":6.333
+			        "TableReservation":3.271
 			};
 		</script>
 	

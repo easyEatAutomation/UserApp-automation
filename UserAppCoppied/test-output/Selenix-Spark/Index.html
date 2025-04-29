@@ -56,7 +56,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Mar 14, 2024 02:12:01 pm</span>
+                    <span class="badge badge-primary">Apr 22, 2025 04:10:55 pm</span>
                 </a>
             </li>
         </ul>
@@ -78,6 +78,14 @@
             <i class="fa fa-tag"></i>
           </span>
           <span class="title">Tags</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('exception-view')">
+        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
+          <span class="icon-holder">
+            <i class="fa fa-bug"></i>
+          </span>
+          <span class="title">Exception</span>
         </a>
       </li>
       <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -108,8 +116,8 @@
 					<i class="fa fa-exclamation-circle"></i>
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
 						
+						<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
 						
 						
 						
@@ -123,35 +131,35 @@
 					<i class="fa fa-tag"></i>
 					</a>
 					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-						<a class="dropdown-item" href="#">@smoke</a>
+						<a class="dropdown-item" href="#">@table</a>
 					</ul>
 				</li>
 			</ul>
 		</div>
 		<div class="test-list-wrapper scrollable">
 			<ul class="test-list-item">
-				<li class="test-item"  status="pass" test-id="1"
+				<li class="test-item"  status="fail" test-id="1"
 					author=""
 					tag=""
 					device="">
-					<div class="status-avatar pass-bg">
-						<i class="fa fa-check text-white"></i>
+					<div class="status-avatar fail-bg">
+						<i class="fa fa-times text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">CompleteOrder</p>
-							<p class="duration text-sm">0h 0m 7s+673ms</p>
-							<span class="datetime">14:12:01 pm</span>
+							<p class="name">TableReservation</p>
+							<p class="duration text-sm">0h 0m 3s+271ms</p>
+							<span class="datetime">16:10:56 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">CompleteOrder</h5>
-									<span class='badge badge-success'>03.14.2024 14:12:01</span>
-									<span class='badge badge-danger'>03.14.2024 14:12:09</span>
-									<span class='badge badge-default'>0h 0m 7s+673ms</span>
+									<h5 class="test-status text-fail">TableReservation</h5>
+									<span class='badge badge-success'>04.22.2025 16:10:56</span>
+									<span class='badge badge-danger'>04.22.2025 16:10:59</span>
+									<span class='badge badge-default'>0h 0m 3s+271ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -164,679 +172,39 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Open Chrome Browser</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start given" title="stepDefination.stepDefination.i_open_browser_and_POS(java.lang.String,java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Given I open "Chrome" browser and POS "https://partner.easyeat.ai/login"</span>
-							</div>
-				<div class="details"></div>
-					</div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Login with valid Credentials</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start when" title="stepDefination.stepDefination.user_is_on_Login_page()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>When User is on Login Page</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_enters_and(java.lang.String,java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User enters "ajai@easyeat.ai" and "ajai1234"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_loginButton()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Login button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_should_get_logged_in()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User should get logged in</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.message_displayed_login_successfully()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Message displayed Login Successfully</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_click(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  "1"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_click(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  "2"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_click(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  "4"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_click(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  "1"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_SignIn_button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then click on SignIn button</span>
-							</div>
-				<div class="details"></div>
-					</div>
-				</div>
-	</div>
-</div>
-					</div>
-				</li>
-				<li class="test-item"  status="skip" test-id="15"
-					author=""
-					tag=""
-					device="">
-					<div class="status-avatar skip-bg">
-						<i class="fa fa-long-arrow-right text-white"></i>
-					</div>
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">LoginPage</p>
-							<p class="duration text-sm">0h 0m 8s+660ms</p>
-							<span class="datetime">14:12:09 pm</span>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="detail-head">
-							<div class="p-v-10 d-inline-block">
-								<div class="info">
-									<h5 class="test-status text-skip">LoginPage</h5>
-									<span class='badge badge-success'>03.14.2024 14:12:09</span>
-									<span class='badge badge-danger'>03.14.2024 14:12:18</span>
-									<span class='badge badge-default'>0h 0m 8s+660ms</span>
-								</div>
-								<div class="m-t-10 m-l-5">
-									
-								</div>
-							</div>
-						</div>
-
-<div class="accordion mt-4">
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Open Chrome Browser</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
 				<div class="collapse">
 					<div class="card-body">
 							<div class="d-flex align-items-center justify-content-start given" title="stepDefination.stepDefination.i_open_browser_and(java.lang.String,java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
 								</span>
-								<span>Given I open "Chrome" browser and "https://easyeat.ai/r/automation_cafe_Malaysia12/1?source=qr&tableId=a1&tableNo=333"</span>
+								<span>Given I open "Chrome" browser and "pickup"</span>
 							</div>
-				<div class="details"></div>
-					</div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Create Dine In Order</div>
-				<div class="status-avatar float-left skip-bg">
-					<i class="fa fa-long-arrow-right text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start when" title="stepDefination.stepDefination.user_is_on_Menu_page()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>When User is on Menu Page</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Add_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User Click on Add button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant1()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant1</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant2()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant2</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant3()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant3</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_AddVariant_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User Click on AddVariant Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_View_Cart_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  on View Cart Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Place_Order_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  on Place Order Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="">
+				<textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "WebBase.WebBase.driver" is null
+	at WebBase.WebBase.openUserApp(WebBase.java:204)
+	at WebBase.WebBase.openWebsite(WebBase.java:192)
+	at stepDefination.stepDefination.i_open_browser_and(stepDefination.java:62)
+	at ✽.I open "Chrome" browser and "pickup"(file:///C:/Users/New/Downloads/UserAppCoppied/Features/TableReservation.feature:34)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start given" title="stepDefination.stepDefination.i_open_browser_and_POS(java.lang.String,java.lang.String)">
 								<span class="alert-icon skip-bg">
 									<i class="fa fa-long-arrow-right text-white"></i>
 								</span>
-								<span>Then Read invoice number</span>
+								<span>Given I open "Chrome" browser and POS "posurl"</span>
 							</div>
-				<div class="details">Step undefined</div>
-					</div>
-				</div>
-	</div>
-</div>
-					</div>
-				</li>
-				<li class="test-item"  status="skip" test-id="28"
-					author=""
-					tag=""
-					device="">
-					<div class="status-avatar skip-bg">
-						<i class="fa fa-long-arrow-right text-white"></i>
-					</div>
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">PickupOrder</p>
-							<p class="duration text-sm">0h 0m 46s+607ms</p>
-							<span class="datetime">14:12:18 pm</span>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="detail-head">
-							<div class="p-v-10 d-inline-block">
-								<div class="info">
-									<h5 class="test-status text-skip">PickupOrder</h5>
-									<span class='badge badge-success'>03.14.2024 14:12:18</span>
-									<span class='badge badge-danger'>03.14.2024 14:13:04</span>
-									<span class='badge badge-default'>0h 0m 46s+607ms</span>
-								</div>
-								<div class="m-t-10 m-l-5">
-									
-								</div>
-							</div>
-						</div>
-
-<div class="accordion mt-4">
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Open Chrome Browser</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start given" title="stepDefination.stepDefination.i_open_browser_and(java.lang.String,java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Given I open "Chrome" browser and "https://easyeat.ai/r/automation_cafe_Malaysia12/3"</span>
-							</div>
-				<div class="details"></div>
-					</div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Create Pickup Order</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start when" title="stepDefination.stepDefination.user_is_on_Menu_page()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>When User is on Menu Page</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Add_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User Click on Add button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant1()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant1</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant2()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant2</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant3()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant3</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_AddVariant_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User Click on AddVariant Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_View_Cart_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  on View Cart Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Continue_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  on Continue Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Login_via_Mobile_Number_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  on Login via Mobile Number Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Flag()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click on Flag</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_write(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user write "Malaysia"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Malaysia_Country_code()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click on Malaysia Country code</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_set_mobile_number(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user set mobile number "111123456"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Continue1_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click on Continue1 Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Place_Order_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  on Place Order Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.select_StoreCredits_Checkbox()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then select StoreCredits Checkbox</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Confirm_to_pay_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then click on Confirm to pay Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Okay_got_it_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then click on Okay got it button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.get_invoice_number()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then get invoice number</span>
-							</div>
-				<div class="details"></div>
-					</div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Open Chrome Browser</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start given" title="stepDefination.stepDefination.i_open_browser_and_POS(java.lang.String,java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Given I open "Chrome" browser and POS "https://partner.easyeat.ai/login"</span>
-							</div>
-				<div class="details"></div>
-					</div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Login with valid Credentials</div>
-				<div class="status-avatar float-left skip-bg">
-					<i class="fa fa-long-arrow-right text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start when" title="stepDefination.stepDefination.user_is_on_Login_page()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>When User is on Login Page</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_enters_and(java.lang.String,java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User enters "ajai@easyeat.ai" and "ajai1234"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_loginButton()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Login button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_should_get_logged_in()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User should get logged in</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.message_displayed_login_successfully()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Message displayed Login Successfully</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_click(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  "1"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_click(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  "2"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_click(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  "4"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.user_click(java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  "1"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_SignIn_button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then click on SignIn button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.close_marketing_pop_up()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then close marketing pop up</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="">
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.switch_back_to_User_app()">
 								<span class="alert-icon skip-bg">
 									<i class="fa fa-long-arrow-right text-white"></i>
 								</span>
-								<span>And search invoice number</span>
+								<span>Then switch back to User app</span>
 							</div>
-				<div class="details">Step undefined</div>
-					</div>
-				</div>
-	</div>
-</div>
-					</div>
-				</li>
-				<li class="test-item"  status="pass" test-id="66"
-					author=""
-					tag=""
-					device="">
-					<div class="status-avatar pass-bg">
-						<i class="fa fa-check text-white"></i>
-					</div>
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">TAOrder</p>
-							<p class="duration text-sm">0h 0m 6s+333ms</p>
-							<span class="datetime">14:13:04 pm</span>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="detail-head">
-							<div class="p-v-10 d-inline-block">
-								<div class="info">
-									<h5 class="test-status text-pass">TAOrder</h5>
-									<span class='badge badge-success'>03.14.2024 14:13:04</span>
-									<span class='badge badge-danger'>03.14.2024 14:13:11</span>
-									<span class='badge badge-default'>0h 0m 6s+333ms</span>
-								</div>
-								<div class="m-t-10 m-l-5">
-									
-								</div>
-							</div>
-						</div>
-
-<div class="accordion mt-4">
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Open Chrome Browser</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start given" title="stepDefination.stepDefination.i_open_browser_and(java.lang.String,java.lang.String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Given I open "Chrome" browser and "https://easyeat.ai/r/automation_cafe_Malaysia12/3/ta"</span>
-							</div>
-				<div class="details"></div>
-					</div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Create TA Order</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-					<div class="card-body">
-							<div class="d-flex align-items-center justify-content-start when" title="stepDefination.stepDefination.user_is_on_Menu_page()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>When User is on Menu Page</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Add_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User Click on Add button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant1()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant1</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant2()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant2</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="stepDefination.stepDefination.click_on_Variant3()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Click on Variant3</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_AddVariant_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then User Click on AddVariant Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_View_Cart_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  on View Cart Button</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start then" title="stepDefination.stepDefination.click_on_Place_Order_Button()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Then user click  on Place Order Button</span>
-							</div>
-				<div class="details"></div>
+				<div class="details">Step skipped</div>
 					</div>
 				</div>
 	</div>
@@ -883,11 +251,11 @@
 				<li class="test-item">
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">@smoke</p>
-							<p class="duration text-sm">4 tests</p>
+							<p class="name">@table</p>
+							<p class="duration text-sm">1 tests</p>
 							<span class="datetime">
-							<span class='badge badge-success'>4</span>
 							
+							<span class='badge badge-danger'>1</span>
 							
 							
 							</span>
@@ -895,9 +263,9 @@
 					</div>
 					<div class="test-contents d-none">
 						<div class="info">
-							<h4>@smoke</h4>
-							<span status="pass" class='badge badge-success'>4 passed</span>
+							<h4>@table</h4>
 							
+							<span status="fail" class='badge badge-danger'>1 failed</span>
 							
 							
 						</div>
@@ -910,59 +278,92 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="tag-test-status" status="pass">
+								<tr class="tag-test-status" status="fail">
 									<td>
-										<div class='status-avatar pass-bg'>
-											<i class="fa fa-check text-white"></i>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
 										</div>
 									</td>
-									<td>14:12:01 pm</td>
+									<td>16:10:56 pm</td>
 									<td class='linked' test-id='2'>
 										Open Chrome Browser
 										<div class="">
-											<span class="badge badge-default">CompleteOrder.Open Chrome Browser</span>
+											<span class="badge badge-default">TableReservation.Open Chrome Browser</span>
 										</div>
 									</td>
 								</tr>
-								<tr class="tag-test-status" status="pass">
-									<td>
-										<div class='status-avatar pass-bg'>
-											<i class="fa fa-check text-white"></i>
-										</div>
-									</td>
-									<td>14:12:09 pm</td>
-									<td class='linked' test-id='16'>
-										Open Chrome Browser
-										<div class="">
-											<span class="badge badge-default">LoginPage.Open Chrome Browser</span>
-										</div>
-									</td>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row exception-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Exception</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">1</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">java.lang.NullPointerException</p>
+							<p class="duration text-sm">1 tests</p>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>java.lang.NullPointerException</h4>
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
 								</tr>
-								<tr class="tag-test-status" status="pass">
+							</thead>
+							<tbody>
+								<tr>
 									<td>
-										<div class='status-avatar pass-bg'>
-											<i class="fa fa-check text-white"></i>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
 										</div>
 									</td>
-									<td>14:12:18 pm</td>
-									<td class='linked' test-id='29'>
-										Open Chrome Browser
+									<td>16:10:56 pm</td>
+									<td class='linked' test-id='3'>
+										Given I open "Chrome" browser and "pickup"
 										<div class="">
-											<span class="badge badge-default">PickupOrder.Open Chrome Browser</span>
-										</div>
-									</td>
-								</tr>
-								<tr class="tag-test-status" status="pass">
-									<td>
-										<div class='status-avatar pass-bg'>
-											<i class="fa fa-check text-white"></i>
-										</div>
-									</td>
-									<td>14:13:04 pm</td>
-									<td class='linked' test-id='67'>
-										Open Chrome Browser
-										<div class="">
-											<span class="badge badge-default">TAOrder.Open Chrome Browser</span>
+											<span class="badge badge-default">Open Chrome Browser</span>
 										</div>
 									</td>
 								</tr>
@@ -1001,13 +402,13 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='50%'>
-						<b>2</b> features passed
+					<div><small data-tooltip='0%'>
+						<b>0</b> features passed
 						</small>
 					</div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> features failed, 
-						<b>2</b> skipped, <b data-tooltip='0%'>0</b> others
+						<small data-tooltip='100%'><b>1</b> features failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
 				</div>
@@ -1024,10 +425,10 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='80%'><b>8</b> scenarios passed</small></div>
+					<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> scenarios failed, 
-						<b>2</b> skipped, <b data-tooltip='20%'>0</b> others
+						<small data-tooltip='100%'><b>1</b> scenarios failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
 				</div>
@@ -1044,10 +445,10 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='96.825%'><b>61</b> steps passed</small></div>
+					<div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> steps failed, 
-						<b>2</b> skipped, <b data-tooltip='3.175%'>0</b> others
+						<small data-tooltip='33.333%'><b>1</b> steps failed, 
+						<b>2</b> skipped, <b data-tooltip='66.667%'>0</b> others
 						</small>
 					</div>
 				</div>
@@ -1061,10 +462,10 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Features</h6>
-							<h2 class="font-size-28 font-weight-light mt-3">4</h2>
+							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>50.00%</span>
+							<span>.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -1080,10 +481,10 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Scenarios</h6>
-							<h2 class="font-size-28 font-weight-light mt-3">10</h2>
+							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>80.00%</span>
+							<span>.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -1099,7 +500,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Mar 14, 2024 02:12:01 pm</h4>
+							<h4 class="font-weight-light mt-4">Apr 22, 2025 04:10:55 pm</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1115,7 +516,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 1m 9s+449ms</h4>
+							<h4 class="font-weight-light mt-4">0h 0m 4s+167ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1159,12 +560,12 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>@smoke</td>
-								<td>4</td>
+								<td>@table</td>
 								<td>0</td>
+								<td>1</td>
 								<td>0</td>
 								<td>
-									100%
+									0%
 								</td>
 							</tr>
 						</tbody>
@@ -1176,37 +577,37 @@
 </div>
 <script>
 	var statusGroup = {
-	    parentCount: 4,
-		passParent: 2,
-		failParent: 0,
+	    parentCount: 1,
+		passParent: 0,
+		failParent: 1,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
-		skipParent: 2,
-		exceptionsParent: 2,
-		childCount: 10,
-		passChild: 8,
-		failChild: 0,
+		skipParent: 0,
+		exceptionsParent: 1,
+		childCount: 1,
+		passChild: 0,
+		failChild: 1,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
-		skipChild: 2,
+		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 2,
-		grandChildCount: 63,
-		passGrandChild: 61,
-		failGrandChild: 0,
+		exceptionsChild: 1,
+		grandChildCount: 3,
+		passGrandChild: 0,
+		failGrandChild: 1,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
 		skipGrandChild: 2,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 2,
-		eventsCount: 63,
-		passEvents: 61,
-		failEvents: 0,
+		exceptionsGrandChild: 3,
+		eventsCount: 3,
+		passEvents: 0,
+		failEvents: 1,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
@@ -1218,7 +619,7 @@
 </script>
 <script>
 	var timeline = {
-	        "CompleteOrder":7.673,"LoginPage":8.66,"PickupOrder":46.607,"TAOrder":6.333
+	        "TableReservation":3.271
 	};
 </script>
                 </div>
