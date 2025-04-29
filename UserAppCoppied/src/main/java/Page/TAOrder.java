@@ -22,7 +22,9 @@ import kotlin.jvm.Throws;
 public class TAOrder extends WebBase {
 
 	public static WebDriver driver;
-
+	public String lastEightCharacters;
+	public String testString;
+	
 
 	private By AddButton = By.xpath("//*[@id=\"uniquiMenuId0\"]/div/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[2]/div/div");
 
@@ -33,8 +35,10 @@ public class TAOrder extends WebBase {
 	private By AddVariant = By.xpath("//*[@id=\"uniquiMenuId0\"]/div/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div");
 	private By ViewCart = By.xpath("//*[@id=\"cartFooter\"]/div");
 	private By PlaceOrder = By.xpath("//*[@id=\"cartFooter\"]/div/div[2]/div/div");
-	
-
+	private By Pay_Cash = By.xpath("/html/body/div/div/div/div[2]/div[2]/div[1]/div[4]/div/div[1]/div/div");
+	                                
+	private By IndnPay_Cash = By.xpath("/html/body/div/div/div/div[2]/div[2]/div[1]/div[2]/div[1]/div");
+	                                    
 	
 
 	public void AddClick() throws InterruptedException {
@@ -83,8 +87,36 @@ public class TAOrder extends WebBase {
 
 	}
 
+	/*
+	 * public void Click_Pay_Cash() throws InterruptedException {
+	 * 
+	 * clickOnElement(Pay_Cash, "PayCash", 10);
+	 * 
+	 * }
+	 */
+	
+	
+	public void Click_Pay_Cash() throws InterruptedException {
+	    if (clickOnElement(Pay_Cash, "PayCash", 10)) {
+	        System.out.println("Clicked using PayCash");
+	    } else if (clickOnElement(IndnPay_Cash, "IndnPayCash", 10)) {
+	        System.out.println("Clicked using IndnPayCash");
+	    } else {
+	        throw new RuntimeException("Button not found using both IndnPayCash");
+	    }
+	}
 	
 	
 	
+	public String read_invoice_number() {
+	    WebElement invoiceElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[3]/div[6]/div[1]/div[1]/div[2]"));
+	            //*[@id="root"]/div/div[1]/div[3]/div[6]/div[1]/div[1]/div[2]
+	    String invoiceNumber = invoiceElement.getText();
+	    String lastEightCharacters = invoiceNumber.substring(Math.max(0, invoiceNumber.length() - 8));  
+	    System.out.println("Print Invoice Number inside pickuporder" + lastEightCharacters);
+	    testString="Mahmood";
+	    return lastEightCharacters;
+	    
+	}
 	
 }

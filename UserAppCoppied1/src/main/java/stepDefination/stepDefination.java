@@ -1,22 +1,25 @@
 package stepDefination;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import Page.LoginPage;
-import WebBase.WebBase;
+import Page.ActiveOrder_Void_Settle_POS;
+import Page.Bill_ActiveOrder_Void_Settle_POS;
+import Page.Bill_completeOrder;
 import Page.CompleteOrder;
+import Page.CookingInstructions_RepeatPreviousItems;
+import Page.LoginPage;
 import Page.PickupOrder;
 import Page.Promotion;
-import Page.Loyalty;
-import Page.CookingInstructions_RepeatPreviousItems;
 import Page.TAOrder;
 import Page.backbutton;
-import Page.ActiveOrder_Void_Settle_POS;
+import Page.Loyalty;
+import Page.Bill_Delivery;
+import Page.Bill_pickupOrder;
+import Page.Bill_Calculation_On_POS;
+import WebBase.WebBase;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-public class stepDefination {
+public class stepDefination{
 
 
 //	public WebDriver driver;
@@ -30,10 +33,15 @@ public class stepDefination {
 	backbutton backbutton = new backbutton();
 	CookingInstructions_RepeatPreviousItems CookingInstructions_RepeatPreviousItems = new CookingInstructions_RepeatPreviousItems();
 	Promotion Promotion = new Promotion();
-	Loyalty Loyalty = new Loyalty();
-	
+	Bill_completeOrder Bill_completeOrder =  new Bill_completeOrder();
+	Bill_ActiveOrder_Void_Settle_POS Bill_ActiveOrder_Void_Settle_POS = new Bill_ActiveOrder_Void_Settle_POS();
+    Loyalty Loyalty = new Loyalty();
+    Bill_Calculation_On_POS  Bill_Calculation_On_POS = new Bill_Calculation_On_POS();
+    Bill_Delivery Bill_Delivery = new Bill_Delivery();
+    Bill_pickupOrder Bill_pickupOrder = new Bill_pickupOrder();
 	public static String Invoice;
-	public static String Invoice1;
+	public static String final_bill;
+    public static String Invoice1;
 
 	@Given("I open {string} browser and {string}")
 	public void i_open_browser_and(String browserName, String URL) throws InterruptedException {
@@ -95,16 +103,49 @@ public class stepDefination {
 		loginPage.Click_ViewCart ();
 
 	}
+	
+	@Then("user calculate item_total_sst_sc_pc_Discount_manually")
+	public void user_calculate_item_total_sst_sc_pc_Discount_manually()  throws InterruptedException{
+		Bill_ActiveOrder_Void_Settle_POS.itemTotal_sst_pc_sc_discount();
+	}
+
 
 	@Then("user click  on Place Order Button")
 	public void click_on_Place_Order_Button() throws InterruptedException {
-		// Write code here that turns the phrase above into concrete actions
-
 		loginPage.Click_PlaceOrder ();
-
 	}
 	
 	
+	@Then("user validate SST on user App")
+	public void user_validate_SST_on_user_App() throws InterruptedException{
+		Bill_ActiveOrder_Void_Settle_POS.sst_validation();
+	}
+
+	@Then("user validate SC on user App")
+	public void user_validate_SC_on_user_App() throws InterruptedException{
+		Bill_ActiveOrder_Void_Settle_POS.sc_validation();
+	}
+
+	@Then("user validate PC on user App")
+	public void user_validate_PC_on_user_App() throws InterruptedException{
+		Bill_ActiveOrder_Void_Settle_POS.pc_validation();
+	}
+	
+	@Then("user calculate and validate the Bill")
+	public void user_calculate_and_validate_the_Bill() throws InterruptedException{
+		final_bill = Bill_ActiveOrder_Void_Settle_POS.bill_calculation_and_validation();
+	}
+
+
+	@Then("user click on add more Button on userApp")
+	public void user_click_on_add_more_Button_on_userApp()  throws InterruptedException{
+		Bill_ActiveOrder_Void_Settle_POS.add_more_buttom();
+	}
+	
+	@Then("user calculate item total sst sc pc Discount manually add more")
+	public void user_calculate_item_total_sst_sc_pc_Discount_manually_add_more()  throws InterruptedException{
+		Bill_ActiveOrder_Void_Settle_POS.itemTotal_sst_pc_sc_discount_after_add_more();
+	}
 	
 	@Then("User Click on Minus icon")
 	public void User_Click_on_Minus_icon() throws InterruptedException {
@@ -145,7 +186,6 @@ public class stepDefination {
 	@Then("user click on Skip button")
 	public void user_click_on_Skip_button() throws InterruptedException {
 		loginPage.Click_Skip();
-		System.out.println("Skip message12121212121212");
 
 	}
 	
@@ -264,7 +304,13 @@ public class stepDefination {
 //		stepDefination.setInvoice(Invoice);
 		System.out.println("print invoice number inside stepdefnition" + Invoice);
 	}
-	
+
+	@And("search invoice1 number")
+	public void search_invoice1_number() throws InterruptedException {
+		CompleteOrder.SearchInvoice(Invoice1);
+	}
+
+
 	
 	@Then("get invoice1 number")
 	public void get_invoice1_number() throws InterruptedException {
@@ -345,12 +391,14 @@ public class stepDefination {
 	public void search_invoice_number() throws InterruptedException {
 		CompleteOrder.SearchInvoice(Invoice);
 	}
-
 	
-	@And("search invoice1 number")
-	public void search_invoice1_number() throws InterruptedException {
-		CompleteOrder.SearchInvoice(Invoice1);
+	
+	@Then("Validate the userApp bill on POS")
+	public void validate_the_userApp_bill_on_POS() throws InterruptedException{
+		System.out.println("5555555: " + final_bill);
+	  Bill_completeOrder.Bill_validation_on_pos(final_bill);
 	}
+
 	
 	@Then("User Click on Start Preparing Button")
 	public void User_Click_on_Start_Preparing_Button() throws InterruptedException {
@@ -388,6 +436,7 @@ public class stepDefination {
 	@When("Click on Settle Bill button")
 	public void Click_on_Settle_Bill_button() throws InterruptedException {
 	   ActiveOrder_Void_Settle_POS.SettleBill();
+	   
 	   
 	}
 	
@@ -555,6 +604,128 @@ public class stepDefination {
    }
 	
 	
+	//bill calculation after add more item
+	
+	@Then("user calculate item total sst sc pc Discount manually after adding more item from POS")
+	public void user_calculate_item_total_sst_sc_pc_Discount_manually_after_adding_more_item_from_POS() throws InterruptedException{
+		Bill_Calculation_On_POS.itemTotal_sst_pc_sc_discount_POS_afterAddmore_item();
+	}
+
+	@Then("user validate SST on POS after addMoreItem")
+	public void user_validate_SST_on_POS_after_addMoreItem() throws InterruptedException{
+		Bill_Calculation_On_POS.sst_validation_after_addMoreItem();
+	}
+
+	@Then("user validate SC on user POS after addMoreItem")
+	public void user_validate_SC_on_user_POS_after_addMoreItem() throws InterruptedException{
+		Bill_Calculation_On_POS.sc_validation_after_addMoreItem();
+	}
+
+	@Then("user validate PC on user POS after addMoreItem")
+	public void user_validate_PC_on_user_POS_after_addMoreItem() throws InterruptedException{
+		Bill_Calculation_On_POS.pc_validation_after_addMoreItem();
+	}
+
+	@Then("user calculate and validate the Bill on POS after addMoreItem")
+	public void user_calculate_and_validate_the_Bill_on_POS_after_addMoreItem() throws InterruptedException{
+        Bill_Calculation_On_POS.bill_calculation_and_validation_after_addMoreItem();
+	}
+	
+	// bill calculation after void item
+	
+	@Then("user calculate item total sst sc pc Discount manually after voiding item from POS")
+	public void user_calculate_item_total_sst_sc_pc_Discount_manually_after_voiding_item_from_POS() throws InterruptedException{
+		Bill_Calculation_On_POS.itemTotal_sst_pc_sc_discount_POS_after_voidItem();
+	}
+	
+	@Then("user validate SST on POS after void iten")
+	public void user_validate_SST_on_POS_after_void_iten() throws InterruptedException{
+		Bill_Calculation_On_POS.sst_validation_after_voidItem();
+	}
+
+	@Then("user validate SC on user POS after void item")
+	public void user_validate_SC_on_user_POS_after_void_item() throws InterruptedException{
+		Bill_Calculation_On_POS.sc_validation_after_voidItem();
+	}
+
+	@Then("user validate PC on user POS after void item")
+	public void user_validate_PC_on_user_POS_after_void_item() throws InterruptedException{
+		Bill_Calculation_On_POS.pc_validation_after_voidItem();
+	}
+
+	@Then("user calculate and validate the Bill on POS after void item")
+	public void user_calculate_and_validate_the_Bill_on_POS_after_void_item() throws InterruptedException{
+		Bill_Calculation_On_POS.bill_calculation_and_validation_after_voidItem();
+	}
+	
+
+	// bill_Delivery Order
+	
+	@Then("user calculate item_total_sst_sc_pc_Discount_manually_for_DL_order")
+	public void user_calculate_item_total_sst_sc_pc_Discount_manually_for_DL_order() throws InterruptedException{
+		Bill_Delivery.itemTotal_sst_pc_sc_discount();
+	}
+
+	@Then("user validate SST on user App_for_DL_order")
+	public void user_validate_SST_on_user_App_for_DL_order() throws InterruptedException{
+		Bill_Delivery.sst_validation();
+	}
+
+	@Then("user validate SC on user App_for_DL_order")
+	public void user_validate_SC_on_user_App_for_DL_order() throws InterruptedException{
+		Bill_Delivery.sc_validation();
+	}
+
+	@Then("user validate PC on user App_for_DL_order")
+	public void user_validate_PC_on_user_App_for_DL_order() throws InterruptedException{
+		Bill_Delivery.pc_validation();
+	}
+
+	@Then("user calculate and validate the Bill_for_DL_order")
+	public void user_calculate_and_validate_the_Bill_for_DL_order() throws InterruptedException{
+		final_bill = Bill_Delivery.bill_calculation_and_validation();
+	}
+
+	@Then("Validate the userApp bill on POS_for_DL_order")
+	public void validate_the_userApp_bill_on_POS_for_DL_order() throws InterruptedException{
+		Bill_completeOrder.Bill_validation_on_pos_for_dl_order(final_bill);
+	}
+	
+	
+	//Bill PickUp Order
+	
+	@Then("user calculate item_total_sst_sc_pc_Discount_manually_for_PU_order")
+	public void user_calculate_item_total_sst_sc_pc_Discount_manually_for_PU_order() throws InterruptedException{
+	  Bill_pickupOrder.itemTotal_sst_pc_sc_discount();
+	}
+
+	@Then("user validate SST on user App_for_PU_order")
+	public void user_validate_SST_on_user_App_for_PU_order() throws InterruptedException{
+		Bill_pickupOrder.sst_validation();
+	}
+
+	@Then("user validate SC on user App_for_PU_order")
+	public void user_validate_SC_on_user_App_for_PU_order() throws InterruptedException{
+		Bill_pickupOrder.sc_validation();
+	}
+
+	@Then("user validate PC on user App_for_PU_order")
+	public void user_validate_PC_on_user_App_for_PU_order() throws InterruptedException{
+		Bill_pickupOrder.pc_validation();
+	}
+
+	@Then("user calculate and validate the Bill_for_PU_order")
+	public void user_calculate_and_validate_the_Bill_for_PU_order() throws InterruptedException{
+		final_bill = Bill_pickupOrder.bill_calculation_and_validation();
+	}
+
+	@Then("Validate the userApp bill on POS_for_PU_order")
+	public void validate_the_userApp_bill_on_POS_for_PU_order() throws InterruptedException{
+		Bill_completeOrder.Bill_validation_on_pos_for_PU_order(final_bill);
+	}
+
+
+	
 	@Then("user click on check box")
 	public void user_click_on_check_box()throws InterruptedException {
 		CookingInstructions_RepeatPreviousItems.CookingInstructionsCheckbox();
@@ -680,11 +851,3 @@ public class stepDefination {
 	
 	
 }
-
-
-		
-		
-
-
-
-

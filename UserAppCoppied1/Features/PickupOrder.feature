@@ -16,7 +16,7 @@ Feature: PickupOrder
     
     Scenario: Remove Item from cart
     Then user remove item
-    Then user click on browse menu   When User is on Menu Page
+    Then user click on browse menu
     Then User Click on Add button
     And Click on Variant1
     And Click on Variant2
@@ -70,3 +70,4 @@ Feature: PickupOrder
     Then User Click on Start Preparing Button
     Then User Click on Start Preparing Button
     Then User Click on Start Preparing Button
+    

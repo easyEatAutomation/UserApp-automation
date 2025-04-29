@@ -104,6 +104,7 @@ public class PickupOrder extends WebBase {
 	public void Click_Continue1() throws InterruptedException {
 
 		clickOnElement(Continue1, "Continue1", 10);
+		Thread.sleep(15000);
 
 	}
 

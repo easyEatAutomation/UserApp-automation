@@ -21,14 +21,14 @@ import kotlin.jvm.Throws;
 
 public class ActiveOrder_Void_Settle_POS extends WebBase {
 
-	public static WebDriver driver;
+	//public static WebDriver driver;
 	
 
 	
 	private By OrderStatusBack = By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[1]/div[1]/img");
 	private By ActiveBanner = By.xpath("//*[@id=\"root\"]/div/div[8]/div/div/div/div/div/div/div[3]/div");
 	private By SettleBill = By.xpath("/html/body/app-root/body/div/div[2]/div[2]/app-order/div/div[2]/div[3]/app-order-right/div/div[3]/div[1]/button[2]");
-	private By Cash = By.xpath("/html/body/app-root/body/div/div[2]/div/app-settle/div/div/app-payment-method/div[3]/div/button[2]");
+	private By Cash = By.xpath("/html/body/app-root/body/div/div[2]/div/app-settle/div/div/app-payment-method/div[3]/div/button[2]/p");
 	private By enterAmount = By.xpath("//*[@id=\"new-order-details-id\"]/div[1]/div[1]/button[2]");
 	private By nextButton = By.xpath("//*[@id=\"new-order-details-id\"]/div[2]/div/button");
 	private By pendingAmountDoneButton = By.xpath("//*[@id=\"new-order-details-id\"]/div[2]/button[2]");
@@ -44,42 +44,42 @@ public class ActiveOrder_Void_Settle_POS extends WebBase {
 	
 	
 	public void OrderStatusBack()throws InterruptedException {
-		clickOnElement(OrderStatusBack, "OrderStatusBack", 7000);
-		Thread.sleep(7000);
+		clickOnElement(OrderStatusBack, "OrderStatusBack", 1000);
+		Thread.sleep(1500);
 	}
 	
 	
 	public void ActiveBanner()throws InterruptedException {
-		clickOnElement(ActiveBanner, "ActiveBanner", 7000);
-		Thread.sleep(7000);
+		clickOnElement(ActiveBanner, "ActiveBanner", 1000);
+		Thread.sleep(1500);
 	}
 	
 	
 	
 	public void SettleBill()throws InterruptedException {
-		clickOnElement(SettleBill, "Clicked on Settle Bill", 7000);
-		Thread.sleep(7000);
+		clickOnElement(SettleBill, "Clicked on Settle Bill", 1000);
+		Thread.sleep(15000);
 
 
 	}
 
 	public void Cash()throws InterruptedException {
 
-		clickOnElement(Cash, "Cash Bill", 10000);
+		clickOnElement(Cash, "Cash Bill", 1000);
 	}
 
 	
 	
 	public void enterAmount () throws InterruptedException {
 
-		clickOnElement(enterAmount, "Clicked on full Amount", 10000);
+		clickOnElement(enterAmount, "Clicked on full Amount", 1000);
 		Thread.sleep(1500);
 	}
 	
 
 	public void nextButton () throws InterruptedException {
 
-		clickOnElement(nextButton, "Clicked on Next Button", 10000);
+		clickOnElement(nextButton, "Clicked on Next Button", 1000);
 
 		Thread.sleep(1500);
     }
