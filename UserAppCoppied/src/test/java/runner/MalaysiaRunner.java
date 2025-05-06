@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
     features = "Features",
     glue = {"stepDefination"},
     plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-   	tags = {"@table"}
+   	tags = {"@demo"}
     //tags = {"@smoke" }
 )
 public class MalaysiaRunner {

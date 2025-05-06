@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import WebBase.WebBase;
-import kotlin.jvm.Throws;
+//import kotlin.jvm.Throws;
 
 public class ActiveOrder_Void_Settle_POS extends WebBase {
 

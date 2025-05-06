@@ -1,5 +1,6 @@
 package Page;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -231,7 +232,8 @@ public class Bill_pickupOrder extends WebBase {
 		total_bill_calaculated = String.format("%.2f", total_bill);
 		total_bill = Double.parseDouble(total_bill_calaculated);
 
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		//WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement sys_bill = driver.findElement(By.xpath(getSystemBillXPath()));
 
 		String text = sys_bill.getText();

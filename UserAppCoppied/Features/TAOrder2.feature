@@ -36,7 +36,20 @@ Feature: TAOrder
     And search invoice number
     Then User Click on Dispatched Button
     #Then User Click on Start Preparing Button
+    When I switch to the UserApp windowws
+    Then verify status is preparing in userapp
+    When I switch to the POS windowws
     Then User Click on Dispatched Button
+    When I switch to the UserApp windowws
+    Then verify status is prepared in userapp
+    When I switch to the POS windowws
     Then User Click on Complete Button
     Then user will select the payment option as cash
     Then bill swipe for full amount 
+    When I switch to the UserApp windowws
+    Then user click on smiley
+    Then user click on Excellent Taste
+    Then user give 5 star
+    Then user enter feedback "Awesome"
+    Then user click on feedback submit button
+    

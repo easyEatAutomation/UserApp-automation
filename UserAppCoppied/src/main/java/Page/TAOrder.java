@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import WebBase.WebBase;
-import kotlin.jvm.Throws;
+
 
 public class TAOrder extends WebBase {
 

@@ -26,8 +26,8 @@ import WebBase.WebBase;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import kotlin.jvm.Throws;
-import kotlin.reflect.KProperty.Getter;
+//import kotlin.jvm.Throws;
+//import kotlin.reflect.KProperty.Getter;
 import Page.CompleteOrder;
 
 public class PickupOrder extends WebBase {

@@ -1,5 +1,6 @@
 package Page;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -192,7 +193,8 @@ public void itemTotal_sst_pc_sc_discount() throws InterruptedException{
 		    
 		    
 		    
-		    WebDriverWait wait = new WebDriverWait(driver, 10);
+		    //WebDriverWait wait = new WebDriverWait(driver, 10);
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		    WebElement sys_bill = driver.findElement(By.xpath("/html/body/div/div/div[1]/div[7]/div[2]/div/div[6]/div[2]"));
 		                                                      
 	        String text = sys_bill.getText();

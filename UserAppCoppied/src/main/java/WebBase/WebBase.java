@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,9 +21,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebBase {
 
-	protected static WebDriver driver;
+	public static WebDriver driver;
+	public static String userAppWindowHandle;
+	public static String posAppWindowHandle;
+
 	protected static String userAppHandle;
 	protected static String posAppHandle;
+	protected static String POSWindow;
+	protected static String userWindow;
 	private WebDriver userDriver;
 	private WebDriver posDriver;
 
@@ -38,7 +44,11 @@ public class WebBase {
 // System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
 
 					System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-					driver = new ChromeDriver();
+					ChromeOptions options = new ChromeOptions();
+					options.addArguments("--remote-allow-origins=*");
+//WebDriver driver = new ChromeDriver(options);
+					driver = new ChromeDriver(options);
+
 				} else if (browserName.toLowerCase().contains("Mozilla fire fox".toLowerCase())) {
 					System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");
 					driver = new FirefoxDriver();
@@ -52,7 +62,11 @@ public class WebBase {
 			} else {
 				if (browserName.toLowerCase().contains("chrome".toLowerCase())) {
 					System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver");
-					driver = new ChromeDriver();
+					ChromeOptions options = new ChromeOptions();
+					options.addArguments("--remote-allow-origins=*");
+//WebDriver driver = new ChromeDriver(options);
+					driver = new ChromeDriver(options);
+
 				} else if (browserName.toLowerCase().contains("Mozilla fire fox".toLowerCase())) {
 					System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");
 					driver = new FirefoxDriver();
@@ -62,6 +76,7 @@ public class WebBase {
 				}
 
 			}
+			driver.manage().window().maximize();
 		} catch (Exception e) {
 			System.out.println("Unable to create driver.Probably browser is crashed");
 		}
@@ -84,7 +99,7 @@ public class WebBase {
 				case "takeaway":
 					return "https://easyeat.id/r/automation_cafe_Indonesia121/3/ta";
 				case "pickup":
-					return "https://easyeat.id/r/automation_cafe_Indonesia121/3";
+					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3?page=2";
 				case "delivery":
 					return "https://easyeat.id/r/automation_cafe_Indonesia121/3";
 				}
@@ -99,7 +114,7 @@ public class WebBase {
 				case "takeaway":
 					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3/ta";
 				case "pickup":
-					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3";
+					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3?page=2";
 				case "delivery":
 					return "https://easyeat.ai/r/automation_cafe_Malaysia12/2";
 				}
@@ -116,7 +131,7 @@ public class WebBase {
 				case "takeaway":
 					return "https://easyeat.id/r/automation_cafe_Indonesia121/3/ta";
 				case "pickup":
-					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3";
+					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3?page=2";
 				case "delivery":
 					return "https://easyeat.ai/r/automation_cafe_Malaysia12/2";
 				}
@@ -129,7 +144,7 @@ public class WebBase {
 				case "takeaway":
 					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3/ta";
 				case "pickup":
-					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3";
+					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3?page=2";
 				case "delivery":
 					return "https://easyeat.ai/r/automation_cafe_Malaysia12/1";
 				}
@@ -192,86 +207,66 @@ public class WebBase {
 		case "takeaway":
 		case "pickup":
 		case "delivery":
-			openUserApp(orderType);
+//openUserApp(orderType);
 			break;
 		case "posurl":
-			openPOSApp();
+//openPOSApp();
 			break;
 		default:
 			throw new IllegalArgumentException("Unknown order type: " + orderType);
 		}
 	}
 
-	private void openUserApp(String orderType) {
-	    if (userAppHandle == null) {
-	        driver.get(getUserAppURL(orderType));
-	        userAppHandle = driver.getWindowHandle();
-	        System.out.println("User App launched in current tab.");
-	    } else {
-	        driver.switchTo().window(userAppHandle);
-	        System.out.println("User App already open.");
-	    }
-	}
-
-	private void openPOSApp() {
-	    if (posAppHandle == null) {
-	        // Open a new tab
-	        ((JavascriptExecutor) driver).executeScript("window.open()");
-	        Set<String> allHandles = driver.getWindowHandles();
-	        List<String> handleList = new ArrayList<>(allHandles);
-
-	        // Switch to the newly opened tab (last one)
-	        String newTabHandle = handleList.get(handleList.size() - 1);
-	        driver.switchTo().window(newTabHandle);
-
-	        driver.get(getPOSURL());
-	        posAppHandle = newTabHandle;
-
-	        System.out.println("POS App launched in new tab.");
-	    } else {
-	        driver.switchTo().window(posAppHandle);
-	        System.out.println("POS App already open.");
-	    }
-	}
-
-	
-	
-	public void switchToUserApp() {
-	    Set<String> currentHandles = driver.getWindowHandles();
-	    if (userAppHandle != null && currentHandles.contains(userAppHandle)) {
-	        driver.switchTo().window(userAppHandle);
-	        System.out.println("Switched to User App tab.");
-	    } else {
-	        System.out.println("User App window not found or closed. Reopening...");
-//	        openUserApp("dinein"); // Or get orderType dynamically
-	    }
-	}
-
-
-
-	
-	public void switchToPOSApp() {
-	    Set<String> currentHandles = driver.getWindowHandles();
-	    if (posAppHandle != null && currentHandles.contains(posAppHandle)) {
-	        driver.switchTo().window(posAppHandle);
-	        System.out.println("Switched to POS App tab.");
-	    } else {
-	        System.out.println("POS App window not found or closed.");
-	        openPOSApp();
-	    }
-	}
-	
-	
-
-	public WebDriver getDriver() {
-		return driver;
-	}
-
-	public void closeAll() {
-		if (driver != null) {
-			driver.quit();
+	public void openWebsiteWithHandlingMultipleWin(String orderType) {
+		switch (orderType.toLowerCase()) {
+		case "pickup":
+		case "dinein":
+		case "dinein1":
+		case "takeaway":
+		case "delivery":
+			driver.get(getUserAppURL(orderType));
+			userAppWindowHandle = driver.getWindowHandle();
+			break;
+		case "posurl":
+			driver.switchTo().newWindow(WindowType.WINDOW);
+			posAppWindowHandle = driver.getWindowHandle();
+			driver.get(getPOSURL());
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown order type: " + orderType);
 		}
 	}
+
+	/*
+	 * public void verifySecswitchtoPOSAppAgain(String posurl) {
+	 * switchToWindow(posurl); }
+	 */
+
+	/*
+	 * private void openPOSApp() { if (posAppHandle == null) {
+	 * driver.get(getPOSURL()); posAppHandle = driver.getWindowHandle();
+	 * System.out.println("POS App launched."); } else {
+	 * System.out.println("Pos app already open"); } }
+	 * 
+	 * public void switchToUserApp() { String expectedTitle = "User App Title"; //
+	 * replace with actual title or part of it for (String handle :
+	 * driver.getWindowHandles()) { driver.switchTo().window(handle); if
+	 * (driver.getTitle().contains(expectedTitle)) {
+	 * System.out.println("Switched to User App"); } }
+	 * System.out.println("User App window not found."); }
+	 * 
+	 * public void switchToPOSApp() { String expectedTitle = "POS App Title"; //
+	 * replace with actual title or part of it for (String handle :
+	 * driver.getWindowHandles()) { driver.switchTo().window(handle); if
+	 * (driver.getTitle().contains(expectedTitle)) {
+	 * System.out.println("Switched to POS App"); } }
+	 * System.out.println("POS App window not found."); } public WebDriver
+	 * getDriver() { return driver; }
+	 */
+
+	/*
+	 * public void closeAll() { if (driver != null) { driver.quit(); } }
+	 */
 
 	/*
 	 * public void openWebsite() { initializeSystemProperties(); String
@@ -288,7 +283,8 @@ public class WebBase {
 
 	protected void moveSlider(By sliderLocator, int xOffset, int yOffset) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+//WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement slider = wait.until(ExpectedConditions.visibilityOfElementLocated(sliderLocator));
 			Actions actions = new Actions(driver);
 			actions.dragAndDropBy(slider, xOffset, yOffset).perform();
@@ -301,7 +297,8 @@ public class WebBase {
 	protected boolean clickOnElement(By locator, String elementName, long waitTime) {
 		boolean isClicked = false;
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+//WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement eleClick = wait.until(ExpectedConditions.elementToBeClickable(locator));
 			eleClick.click();
 			isClicked = true;
@@ -315,7 +312,8 @@ public class WebBase {
 	protected String toastmessage(By locator, String elementName, long waitTime) {
 		String eleEnterText = null;
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+//WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement eleClick = wait.until(ExpectedConditions.elementToBeClickable(locator));
 			eleClick.getText();
 
@@ -332,7 +330,8 @@ public class WebBase {
 	protected boolean verifyPage(By locator, String elementName, long waitTime) {
 		boolean isVerified = false;
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+//WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 			isVerified = true;
 			System.out.println("Successfully verify the page");
@@ -347,8 +346,8 @@ public class WebBase {
 	protected String getText(By elementLocator) {
 		try {
 			@SuppressWarnings("deprecation")
-			WebDriverWait wait = new WebDriverWait(driver, 10); // Adjust the timeout as needed
-
+//WebDriverWait wait = new WebDriverWait(driver, 10); // Adjust the timeout as needed
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
 			String text = element.getText();
 			System.out.println("Text fetched successfully from element: " + text); // Log success message
@@ -366,8 +365,8 @@ public class WebBase {
 		WebElement eleEnterText = null;
 		try {
 
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-
+//WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			eleEnterText = wait.until(ExpectedConditions.elementToBeClickable(locator));
 			eleEnterText.click();
 			eleEnterText.clear();

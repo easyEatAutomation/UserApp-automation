@@ -1,4 +1,4 @@
-	package Page;
+package Page;
 
 import static org.junit.Assert.fail;
 
@@ -18,15 +18,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import Page.PickupOrder;
 
 import WebBase.WebBase;
-import kotlin.jvm.Throws;
+//import kotlin.jvm.Throws;
 
 public class CompleteOrder extends WebBase {
 
+
 	//private static final String String = null;
 
-	public static WebDriver driver;
+	//public static WebDriver driver;
+   
 	public String userEmailId;
-	
+	 public String lastEightCharacters;
+
 	private By usernamevalue = By.id("email");
 	private By passwordvalue = By.cssSelector("input[type=password]");
 
@@ -53,7 +56,9 @@ public class CompleteOrder extends WebBase {
 	                                    //*[@id="mat-mdc-dialog-0"]/div/div/app-payment-pending/div/div[2]/app-payment-options/div/nz-spin/div/div/div[4]
 	private By SwipeComplete = By.xpath("/html/body/div[1]/div[3]/div/mat-dialog-container/div/div/app-payment-pending/div/div[3]/button");
 
-	
+	private By Prepared = By.xpath("/html/body/div/div/div/div[3]/div[4]/div[1]/div[1]/div/div[2]/span[2]");
+			//div[contains(@class, 'div')]/span[text()='Prepared']");
+	private By Preparing = By.xpath("/html/body/div/div/div/div[3]/div[4]/div[1]/div[1]/div/div[2]/span[2]");
    
 	
 	public void enterUsername() {
@@ -210,6 +215,41 @@ public class CompleteOrder extends WebBase {
 		}
 		return userEmailId;
 	}
+	
+
+	public void Prepared() throws InterruptedException {
+		Thread.sleep(1000);
+		toastmessage(Prepared, "Prepared", 10);
+
+	}
+
+	public void Preparing() throws InterruptedException {
+		Thread.sleep(1000);
+		toastmessage(Preparing, "Preparing", 10);
+
+	}
+
+	
+	/*
+	 * public String Prepared()throws InterruptedException {
+	 * 
+	 * WebElement Preparedpath = driver.findElement(By.xpath(
+	 * "/html/body/div/div/div/div[3]/div[4]/div[1]/div[1]/div/div[2]/span[2]"));
+	 * 
+	 * String Preparedtext = Preparedpath.getText();
+	 * System.out.println(Preparedtext);
+	 * 
+	 * String lastEightCharacters = Preparedtext.substring(Math.max(0,
+	 * Preparedtext.length() - 8)); System.out.println("Print Prepared Text: " +
+	 * lastEightCharacters);
+	 * 
+	 * if (lastEightCharacters.equals("Prepared")) {
+	 * System.out.println("Food Prepared"); } else {
+	 * System.out.println("Unable to read text"); }
+	 * 
+	 * return lastEightCharacters; }
+	 * 
+	 */
 }
 
 

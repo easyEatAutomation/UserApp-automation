@@ -1,5 +1,6 @@
 package Page;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -242,7 +243,8 @@ public void itemTotal_sst_pc_sc_discount() throws InterruptedException{
 		    System.out.println("Cart Total Bill Rounded   " + total_bill);
 		    
 		    
-		    WebDriverWait wait = new WebDriverWait(driver, 10);
+		    //WebDriverWait wait = new WebDriverWait(driver, 10);
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		    WebElement sys_bill = driver.findElement(By.xpath(getSystemBillXPath()));
 	        String text = sys_bill.getText();
 	        String convertedText = text.replaceAll("[^0-9.]", "");

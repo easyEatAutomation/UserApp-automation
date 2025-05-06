@@ -50,5 +50,18 @@ Feature: Bill_DeliveryOrder
     And search invoice number
     And Validate the userApp bill on POS_for_DL_order
     Then User Click on Start Preparing Button
+    When I switch to the UserApp windowws
+    Then verify status is preparing in userapp
+    When I switch to the POS windowws
     Then User Click on Dispatched Button
+    When I switch to the UserApp windowws
+    Then verify status is prepared in userapp
+    When I switch to the POS windowws
     Then User Click on Complete Button
+    When I switch to the UserApp windowws
+    Then user click on smiley
+    Then user click on Excellent Taste
+    Then user give 5 star
+    Then user enter feedback "Awesome"
+    Then user click on feedback submit button
+    

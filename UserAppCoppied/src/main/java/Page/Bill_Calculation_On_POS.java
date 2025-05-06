@@ -1,5 +1,6 @@
 package Page;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -165,7 +166,8 @@ public class Bill_Calculation_On_POS extends WebBase{
 	public void sst_validation_after_addMoreItem() throws InterruptedException {
 	    WebElement sstPath = null;
 	    try {
-	    	WebDriverWait wait = new WebDriverWait(driver, 10);
+	    	//WebDriverWait wait = new WebDriverWait(driver, 10);
+	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    	sstPath = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(getSSTXPathaddmore())));
 
 //	        sstPath = driver.findElement(By.xpath(""));
@@ -408,7 +410,8 @@ System.out.println("SC   " + sc_POS);
 public void sst_validation_after_voidItem() throws InterruptedException {
     WebElement sstPath = null;
     try {
-    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	//WebDriverWait wait = new WebDriverWait(driver, 10);
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	sstPath = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(getSSTXPathVoid())));
 
 //        sstPath = driver.findElement(By.xpath(""));
