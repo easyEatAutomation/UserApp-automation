@@ -7,6 +7,7 @@ Feature: BackButton
 
   @smoke 
     Scenario: Create pickup Order
+    When user click on StartOrdering button
     When User is on Menu Page
     Then User Click on Add button
     And Click on Variant1

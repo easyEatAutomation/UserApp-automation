@@ -24,9 +24,11 @@ public class LoginPage extends WebBase {
 	private By Variant1 = By.xpath("(//span[contains(@class, 'fs-14') and contains(text(), '+ RM')])[1]");
 	                                 //html/body/div/div/div[7]/div[1]/div/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[3]/div[2]/div[1]/span   
 	private By IndnVariant1 = By.xpath("/html/body/div/div/div[7]/div[1]/div/div[2]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div/div/div[1]/div[2]/div[3]/div[2]/div[1]/span");
-	private By Variant2 = By.xpath("//*[@id=\"bb0d52d7550e47c5ab48ddff89f63759\"]/div[2]/div[1]/span");
+	//private By Variant2 = By.xpath("//*[@id=\"bb0d52d7550e47c5ab48ddff89f63759\"]/div[2]/div[1]/span");
+	private By Variant2 = By.xpath("/html/body/div/div/div[7]/div[1]/div/div[2]/div/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[5]/div[2]/div[1]/span");
 	private By IndnVariant2 = By.xpath("/html/body/div/div/div[7]/div[1]/div/div[2]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div/div/div[1]/div[2]/div[5]/div[2]/div[1]/span");
-	private By Variant3 = By.xpath("//*[@id=\"f88441ed475240df894e509394892811\"]/div[2]/div[1]/span");
+	//private By Variant3 = By.xpath("//*[@id=\"f88441ed475240df894e509394892811\"]/div[2]/div[1]/span");
+	private By Variant3 = By.xpath("/html/body/div/div/div[7]/div[1]/div/div[2]/div/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[7]/div[2]/div[1]/span");
 	private By IndnVariant3 = By.xpath("/html/body/div/div/div[7]/div[1]/div/div[2]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div/div/div[1]/div[2]/div[7]/div[2]/div[1]/span");
 	private By AddVariant = By.xpath("//div[contains(@class, 'text-comp') and contains(@class, 'fs-16')]");
 	                                  //html/body/div[1]/div/div[8]/div[1]/div/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div
@@ -45,6 +47,7 @@ public class LoginPage extends WebBase {
 	private By AddMore = By.xpath("//div[contains(@class, 'custom-button-class') and .//div[normalize-space()='Add more']]");
 	private By IndnAddMore = By.xpath("/html/body/div/div/div/div[3]/div[5]/div[2]/div[1]/div");
 	private By LoginButton = By.xpath("//*[@id=\"root\"]/div/div[3]/div[1]/div/div/div/div/div/div[2]/div");
+	private By StartOrdering = By.xpath("/html/body/div/div/div[1]/div/div/div[2]/div/div[4]/div");
 
 	
 	/*
@@ -257,5 +260,12 @@ public class LoginPage extends WebBase {
 		clickOnElement(LoginButton, "LoginButton", 10);
 		Thread.sleep(5000);
 	}
+	
+	
+	public void StartOrdering() throws InterruptedException {
+
+		clickOnElement(StartOrdering, "StartOrdering", 10);
+	}
+	
 	
     }

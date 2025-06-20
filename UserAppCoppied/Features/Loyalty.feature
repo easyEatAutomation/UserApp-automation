@@ -7,6 +7,7 @@ Feature: Loyalty
 
   @smoke
   Scenario: Login with User1
+    When user click on StartOrdering button
     Then user click on menu profile icon
     Then user click on login button
     Then user click  on Login via Mobile Number Button

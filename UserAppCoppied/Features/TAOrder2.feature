@@ -17,6 +17,7 @@ Feature: TAOrder
  Scenario: Place Order
     Then user click  on View Cart Button 
     Then user click  on Place Order Button 
+    Then user scroll to pay cash
     Then user click on Pay Cash to the Server
     Then click on Confirm to pay Button
     Then user click on Skip button

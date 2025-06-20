@@ -2,6 +2,7 @@ package WebBase;
 
 import java.time.Duration;
 import java.util.Set;
+import java.util.concurrent.TimeoutException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Assert;
@@ -18,6 +19,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 public class WebBase {
 
@@ -32,8 +34,8 @@ public class WebBase {
 	private WebDriver userDriver;
 	private WebDriver posDriver;
 
-	public static String Environment = "prod"; // Switch between Environments
-	public static String currentCountry = "malaysia"; // switch between countries
+	public static String Environment = "dev"; // Switch between Environments
+	public static String currentCountry = "Malaysia"; // switch between countries
 
 	public void createDriver(String browserName) {
 		try {
@@ -140,13 +142,13 @@ public class WebBase {
 			case "malaysia":
 				switch (orderType.toLowerCase()) {
 				case "dinein":
-					return "https://easyeat.ai/r/automation_cafe_Malaysia12/1?source=qr&tableId=a1&tableNo=333";
+					return "https://app-dev.easyeat.ai/r/NewAutomationMalaysia/1?source=qr&tableId=a1&tableNo=1";
 				case "takeaway":
-					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3/ta";
+					return "https://app-dev.easyeat.ai/r/NewAutomationMalaysia/3/ta";
 				case "pickup":
-					return "https://easyeat.ai/r/automation_cafe_Malaysia12/3?page=2";
+					return "https://app-dev.easyeat.ai/r/NewAutomationMalaysia/3";
 				case "delivery":
-					return "https://easyeat.ai/r/automation_cafe_Malaysia12/1";
+					return "https://app-dev.easyeat.ai/r/NewAutomationMalaysia/2";
 				}
 				break;
 			}
@@ -308,7 +310,26 @@ public class WebBase {
 		}
 		return isClicked;
 	}
+	
+	
+	public boolean scrollToElement(By locator) {
+	    try {
+	        WebElement element = driver.findElement(locator);
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	        return true;
+	    } catch (Exception e) {
+	        return false;
+	    }
+	}
+	
 
+
+	public void scrollByPixels(int pixels) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0," + pixels + ")");
+	}
+	
+	
 	protected String toastmessage(By locator, String elementName, long waitTime) {
 		String eleEnterText = null;
 		try {

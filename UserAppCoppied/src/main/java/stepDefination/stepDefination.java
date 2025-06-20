@@ -86,6 +86,16 @@ public class stepDefination{
 	        Thread.sleep(2000);
 	    }
 	    
+	    
+		@When("user click on StartOrdering button")
+		public void user_click_on_StartOrdering_button() throws InterruptedException {
+			// Write code here that turns the phrase above into concrete actions
+
+			loginPage.StartOrdering();
+		}
+
+	    
+	    
 	  
 		/*
 		 * @Given("I open the home page") public void i_open_the_home_page() {
@@ -364,11 +374,28 @@ public class stepDefination{
 	}
 	
 	
+	@Then("verify status is dispatched in userapp")
+	public void verify_status_is_dispatched_in_userapp() throws InterruptedException {
+		CompleteOrder.UADispatched();
+	}
+	
+	
 	@Then("verify status is preparing in userapp")
 	public void verify_status_is_preparing_in_userapp() throws InterruptedException {
 		CompleteOrder.Preparing();
 	}
 	
+	
+	@Then("verify status is confirmed in userapp")
+	public void verify_status_is_confirmed_in_userapp() throws InterruptedException {
+		CompleteOrder.Confirmed();
+	}
+	
+	
+	@Then("verify status is ready in userapp")
+	public void verify_status_is_ready_in_userapp() throws InterruptedException {
+		CompleteOrder.Ready();
+	}
 	
 	@Then("get invoice1 number")
 	public void get_invoice1_number() throws InterruptedException {
@@ -589,6 +616,11 @@ public class stepDefination{
 		CompleteOrder.SwipeComplete();
 	}
 	
+	
+	@Then("user scroll to pay cash")
+	public void user_scroll_to_pay_cash() throws InterruptedException {
+		TAOrder.Scroll_PayCash();
+	}
 	
 	@Then("user click on Pay Cash to the Server")
 	public void user_click_on_Pay_Cash_to_the_Server() throws InterruptedException {
